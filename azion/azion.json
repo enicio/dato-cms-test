@@ -1,34 +1,58 @@
 {
-  "name": "dato-cms-3",
-  "bucket": "",
+  "name": "dato-cms-test-20240507150248",
+  "bucket": "dato-cms-test-20240507150248",
   "preset": "next",
   "mode": "compute",
   "env": "production",
-  "prefix": "20240430182401",
-  "not-first-run": false,
+  "prefix": "1715105132",
+  "not-first-run": true,
   "function": {
-    "id": 0,
+    "id": 22452,
     "name": "__DEFAULT__",
-    "file": "./out/worker.js",
+    "file": ".edge/worker.js",
     "args": "./azion/args.json",
-    "instance-id": 0,
+    "instance-id": 22008,
     "instance-name": "__DEFAULT__"
   },
   "application": {
-    "id": 0,
+    "id": 1715102411,
     "name": "__DEFAULT__"
   },
   "domain": {
-    "id": 0,
+    "id": 1715101339,
     "name": "__DEFAULT__"
   },
   "rt-purge": {
     "purge_on_publish": true
   },
-  "origin": null,
+  "origin": [
+    {
+      "origin-id": 130909,
+      "origin-key": "da85dd0a-6e8b-4994-ba17-ee9d56650030",
+      "name": "dato-cms-test-20240507150248_single"
+    },
+    {
+      "origin-id": 130910,
+      "origin-key": "49bb779c-9883-4faa-b310-e65baeb287b2",
+      "name": "origin-storage-default"
+    }
+  ],
   "rules-engine": {
     "created": false,
-    "rules": null
+    "rules": [
+      {
+        "id": 246941,
+        "name": "Assets_Rule_1"
+      },
+      {
+        "id": 246942,
+        "name": "Assets_Rule_2"
+      },
+      {
+        "id": 246943,
+        "name": "Compute_Rule"
+      }
+    ]
   },
   "cache-settings": null
 }
