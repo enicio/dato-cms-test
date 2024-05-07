@@ -6,7 +6,7 @@ export async function GET(request) {
   // Please set the NEXT_DATOCMS_PREVIEW_SECRET env variable
   // on Vercel/Netlify, or everyone will be able to enter Preview Mode and
   // see draft content!
-  const secret = process.env.NEXT_DATOCMS_PREVIEW_SECRET  || Azion.env.get('DATOCMS_PREVIEW_SECRET');
+  const secret = process.env.NEXT_DATOCMS_PREVIEW_SECRET;
 
   const { searchParams } = new URL(request.url);
 
