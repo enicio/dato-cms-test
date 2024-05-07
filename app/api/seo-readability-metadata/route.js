@@ -1,5 +1,6 @@
-import { buildClient } from "@datocms/cma-client-node";
-import { JSDOM } from "jsdom";
+// import { buildClient } from "@datocms/cma-client-node";
+import { buildClient } from "@datocms/cma-client-browser";
+// import { JSDOM } from "jsdom";
 import { NextResponse } from "next/server";
 import { draftMode, cookies } from "next/headers";
 
@@ -34,12 +35,12 @@ export async function GET(request) {
   const { searchParams } = new URL(request.url);
 
   const client = buildClient({
-    apiToken: process.env.NEXT_DATOCMS_API_TOKEN,
+    apiToken: process.env.NEXT_DATOCMS_API_TOKEN || Azion.env.get('DATOCMS_API_TOKEN_2'),
     environment: searchParams.get("sandboxEnvironmentId"),
   });
 
   const item = await client.items.find(searchParams.get("itemId"));
-
+  console.log('Items on seo-readability',item);
   const result = findSlugAndUrlForItem(
     item,
     searchParams.get("itemTypeApiKey")
@@ -78,25 +79,25 @@ export async function GET(request) {
 
   const body = await response.text();
 
-  const { document } = new JSDOM(body).window;
+  // const { document } = new JSDOM(body).window;
 
-  const contentEl = document.getElementById("main-content");
+  // const contentEl = document.getElementById("main-content");
 
-  if (!contentEl) {
-    return NextResponse.json(
-      {
-        error: `Page ${url} does not have an element with ID "main-content"!`,
-      },
-      { ...corsInitOptions, status: 422 }
-    );
-  }
+  // if (!contentEl) {
+  //   return NextResponse.json(
+  //     {
+  //       error: `Page ${url} does not have an element with ID "main-content"!`,
+  //     },
+  //     { ...corsInitOptions, status: 422 }
+  //   );
+  // }
 
-  const content = contentEl.innerHTML;
-  const locale = document.querySelector("html").getAttribute("lang") || "en";
-  const title = document.querySelector("title").textContent;
-  const description = document
-    .querySelector('meta[name="description"]')
-    .getAttribute("content");
+  // const content = contentEl.innerHTML;
+  // const locale = document.querySelector("html").getAttribute("lang") || "en";
+  // const title = document.querySelector("title").textContent;
+  // const description = document
+  //   .querySelector('meta[name="description"]')
+  //   .getAttribute("content");
 
   return NextResponse.json(
     {

@@ -68,8 +68,8 @@ export default async function Page() {
         subscription={{
           ...pageRequest,
           initialData: data,
-          token: process.env.NEXT_DATOCMS_API_TOKEN,
-          environment: process.env.NEXT_DATOCMS_ENVIRONMENT || null,
+          token: process.env.NEXT_DATOCMS_API_TOKEN || Azion.env.get('DATOCMS_API_TOKEN_2') ,
+          environment: process.env.NEXT_DATOCMS_API_TOKEN || null,
         }}
       />
     );

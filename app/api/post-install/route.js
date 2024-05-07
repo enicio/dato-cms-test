@@ -1,4 +1,4 @@
-import { buildClient } from "@datocms/cma-client-node";
+import { buildClient } from "@datocms/cma-client-browser";
 import { NextResponse } from "next/server";
 
 const corsInitOptions = {
