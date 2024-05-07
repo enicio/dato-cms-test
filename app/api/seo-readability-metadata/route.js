@@ -35,7 +35,7 @@ export async function GET(request) {
   const { searchParams } = new URL(request.url);
 
   const client = buildClient({
-    apiToken: process.env.NEXT_DATOCMS_API_TOKEN || Azion.env.get('DATOCMS_API_TOKEN_2'),
+    apiToken: process.env.NEXT_DATOCMS_API_TOKEN_2 || Azion.env.get('DATOCMS_API_TOKEN_2'),
     environment: searchParams.get("sandboxEnvironmentId"),
   });
 
