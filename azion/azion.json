@@ -1,39 +1,41 @@
 {
-  "name": "dato-cms-test-20240507150248",
-  "bucket": "dato-cms-test-20240507150248",
+  "name": "dato-cms-test",
+  "bucket": "dato-cms-test",
   "preset": "next",
   "mode": "compute",
   "env": "production",
-  "prefix": "1715105132",
+  "prefix": "20240509165212",
   "not-first-run": true,
   "function": {
-    "id": 22452,
+    "id": 23145,
     "name": "__DEFAULT__",
     "file": ".edge/worker.js",
     "args": "./azion/args.json",
-    "instance-id": 22008,
+    "instance-id": 22688,
     "instance-name": "__DEFAULT__"
   },
   "application": {
-    "id": 1715102411,
+    "id": 1715273926,
     "name": "__DEFAULT__"
   },
   "domain": {
-    "id": 1715101339,
-    "name": "__DEFAULT__"
+    "id": 1715272444,
+    "name": "dato-cms-test",
+    "domain_name": "ukspgnwxwf.map.azionedge.net",
+    "url": "https://ukspgnwxwf.map.azionedge.net"
   },
   "rt-purge": {
     "purge_on_publish": true
   },
   "origin": [
     {
-      "origin-id": 130909,
-      "origin-key": "da85dd0a-6e8b-4994-ba17-ee9d56650030",
-      "name": "dato-cms-test-20240507150248_single"
+      "origin-id": 132849,
+      "origin-key": "e81b9454-eb3d-48be-a981-d64d3f5678f4",
+      "name": "dato-cms-test_single"
     },
     {
-      "origin-id": 130910,
-      "origin-key": "49bb779c-9883-4faa-b310-e65baeb287b2",
+      "origin-id": 132850,
+      "origin-key": "3fb6e72c-bfb4-4bd2-b3c3-062adff31c90",
       "name": "origin-storage-default"
     }
   ],
@@ -41,15 +43,15 @@
     "created": false,
     "rules": [
       {
-        "id": 246941,
+        "id": 250934,
         "name": "Assets_Rule_1"
       },
       {
-        "id": 246942,
+        "id": 250935,
         "name": "Assets_Rule_2"
       },
       {
-        "id": 246943,
+        "id": 250936,
         "name": "Compute_Rule"
       }
     ]
